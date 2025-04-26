@@ -18,11 +18,11 @@ ingress:
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/healthcheck-path: /
     alb.ingress.kubernetes.io/group.name: myapp1
-    #alb.ingress.kubernetes.io/load-balancer-name: "${ENVIRONMENT}-microservices-alb"
+    alb.ingress.kubernetes.io/load-balancer-name: "${ENVIRONMENT}-microservices-alb"
     alb.ingress.kubernetes.io/ssl-redirect: "443"
     alb.ingress.kubernetes.io/listen-ports: "[{\"HTTP\":80},{\"HTTPS\":443}]"
   hosts:
-    - host: client.${ENVIRONMENT}.com
+    - host: client.${ENVIRONMENT}.devops4solutions.com
       paths:
         - path: /
           pathType: Prefix  #  - secretName: chart-example-tls
